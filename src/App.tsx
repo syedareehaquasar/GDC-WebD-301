@@ -5,7 +5,7 @@ import Form from './components/Form';
 
 function App() {
   return (
-    <div className="flex h-screen bg-gray-100 items-center">
+    <div className="flex h-screen bg-blue-100 items-center">
       <div className="w-3/4 p-4 mx-auto bg-white shadow-lg rounded-xl">
         <div className='flex flex-row items-center justify-center'>
           <img src={logo} alt="logo" className="w-20 h-20 animate-spin" />
