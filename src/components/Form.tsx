@@ -11,15 +11,16 @@ const formFields = [
 const Form = () => {
     return (
         <>
-            {formFields.map((field) => (
-                <div key={field.id}>
-                    <label className='m-2'>{field.label}</label>
-                    <input
-                        type={field.type}
-                        className="p-2 pb-3 bg-gray-200 w-full text-blue-900 m-2 rounded-lg shadow outline-2 outline-blue-900"
-                    />
-                </div>
-            ))}
+                {formFields.map((field) => (
+                    <div key={field.id}>
+                        <label className='m-2 font-medium'>{field.label}</label>
+                        <input
+                            type={field.type}
+                            className="p-2 pb-3 bg-gray-200 w-full text-cyan-900 m-2 rounded-lg shadow outline-2 outline-cyan-900"
+                        />
+                    </div>
+                ))}
+                <input className='p-2 mt-4 m-1 bg-cyan-500 w-full text-gray-100 rounded-lg shadow outline-2 outline-cyan-900' type="submit" name='submit' /><br />
         </>
     )
 }

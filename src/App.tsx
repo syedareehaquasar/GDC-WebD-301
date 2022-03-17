@@ -1,19 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
+import AppContainer from './AppContainer';
+import Header from './Header';
 
 function App() {
   return (
-    <div className="flex h-screen bg-blue-100 items-center">
-      <div className="w-3/4 p-4 mx-auto bg-white shadow-lg rounded-xl">
-        <div className='flex flex-row items-center justify-center'>
-          <img src={logo} alt="logo" className="w-20 h-20 animate-spin" />
-          <h1 className="text-center text-xl pt-4">Welcome to <br /> #react-typescript with #tailwindcss </h1>
-        </div>
-        <Form />
+    <AppContainer>
+      <div className="p-4 mx-auto bg-white shadow-lg rounded-xl m-4">
+      <Header
+        title={`Welcome to Lesson 5 of $react-typescript with #tailwindcss`}
+      />
+      <Form />
       </div>
-    </div>
+    </AppContainer>
   );
 }
 
