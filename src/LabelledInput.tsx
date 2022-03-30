@@ -1,18 +1,20 @@
 import React from 'react'
 
 export default function LabelledInput(props: {
+    id: number;
     label: string;
+    fieldType: string;
+    removeFieldCB: (id: number) => void;
 }) {
-    // return (
-    //     <div key={props.id} className="py-2">
-    //         <div className="flex justify-between">
-    //             <label className="font-semibold">{props.label}</label>
-    //             <button className="text-cyan-500" onClick={(_)=>props.removeFieldCB(props.id)}>Remove Field</button>
-    //         </div>
-    //         <input
-    //           type={props.type}
-    //           className="p-2 bg-gray-100 rounded-lg outline-cyan-500 w-full"
-    //         />
-    //     </div>
-    //   )
+    return (
+        <>
+            <label className='m-2 font-medium'>{props.label}</label>
+            <div className="flex gap-1">
+                <input type={props.fieldType} className="p-2 pb-3 bg-gray-200 w-full text-cyan-900 m-2 rounded-lg shadow outline-2 outline-cyan-900" />
+                <button className="mt-3 h-1/2 p-2 bg-red-500 text-gray-100 rounded-lg shadow outline-2 outline-cyan-900" onClick={() => props.removeFieldCB(props.id)}>
+                    Remove
+                </button>
+            </div>
+        </>
+    )
 }
