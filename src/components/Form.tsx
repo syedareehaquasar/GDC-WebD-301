@@ -32,6 +32,11 @@ const Form = (props: { closeFormCB: () => void }) => {
         alert("Details Submitted!")
     }
 
+    const resetForm = () => {
+        setState(state.map((field) => ({ ...field, value: "" })));
+        console.log(state);
+    };
+
     return (
         <>
             <form>
@@ -44,8 +49,8 @@ const Form = (props: { closeFormCB: () => void }) => {
                     />
                 ))}
                 <div className='flex'>
-                    <input className='m-2 p-2 mt-4 m-1 bg-cyan-500 w-full text-gray-100 rounded-lg shadow outline-2 outline-cyan-900' type="reset" name='reset' />
-                    <input className='m-2 p-2 mt-4 m-1 bg-cyan-500 w-full text-gray-100 rounded-lg shadow outline-2 outline-cyan-900' type="submit" name='submit' onClick={submitHandle}/>
+                    <input className='m-2 p-2 mt-4 m-1 bg-cyan-500 w-full text-gray-100 rounded-lg shadow outline-2 outline-cyan-900' type="reset" name='reset' onClick={resetForm} />
+                    <input className='m-2 p-2 mt-4 m-1 bg-cyan-500 w-full text-gray-100 rounded-lg shadow outline-2 outline-cyan-900' type="submit" name='submit' onClick={submitHandle} />
                 </div>
             </form>
 
@@ -54,9 +59,22 @@ const Form = (props: { closeFormCB: () => void }) => {
                     <input className="p-2 pb-3 bg-gray-200 text-cyan-900 m-2 rounded-lg shadow outline-2 outline-cyan-900" type="text" value={newField} placeholder="Field Name" onChange={(e) => {
                         setNewField(e.target.value);
                     }} />
-                    <input className="p-2 pb-3 bg-gray-200 text-cyan-900 m-2 rounded-lg shadow outline-2 outline-cyan-900" type="text" value={newFieldType} placeholder="Field Type" onChange={(e) => {
+                    <select className="p-2 pb-3 bg-gray-200 text-cyan-900 m-2 rounded-lg shadow outline-2 outline-cyan-900" value={newFieldType} placeholder="Field Type" onChange={(e) => {
                         setNewFieldType(e.target.value);
-                    }} />
+                    }}>
+                        <option>text</option>
+                        <option>number</option>
+                        <option>email</option>
+                        <option>url</option>
+                        <option>date</option>
+                        <option>month</option>
+                        <option>week</option>
+                        <option>time</option>
+                        <option>tel</option>
+                        <option>color</option>
+                        <option>file</option>
+                        <option>checkbox</option>
+                    </select>
                     <button className="mt-3 h-1/2 p-2 bg-green-500 text-gray-100 rounded-lg shadow outline-2 outline-green-900"
                         value={newField}
                         onClick={addField}>
